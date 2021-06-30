@@ -1,0 +1,535 @@
+1.	#include <iostream>
+2.	#include <string>
+3.	#include <vector>
+4.	#include <windows.h>
+5.	 
+6.	using namespace std;
+7.	 
+8.	// Класс Физические лица
+9.	class Individual
+10.	{
+11.	public:
+12.	    string _firstname;           // имя
+13.	    string _surname;             // фамилия
+14.	    string _patronymic;          // отчество
+15.	    string _dateOfBirth;         // дата рождения
+16.	    string _phoneNumber;         // номер телефона
+17.	    string _email;               // е-почта
+18.	    string _comment;             // комментарий
+19.	 
+20.	    void input();                // Метод ввода
+21.	    void output();               // Метод вывода
+22.	    void getName();
+23.	 
+24.	    Individual(
+25.	            string firstname   = "Oleg",
+26.	            string surname     = "Vasilev",
+27.	            string patronymic  = "Petrovich",
+28.	            string dateOfBirth = "01.01.2020",
+29.	            string phoneNumber = "89234567890",
+30.	            string email       = "eample@expale.example",
+31.	            string comment     = "comment"
+32.	    );
+33.	    ~Individual();
+34.	};
+35.	 
+36.	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+37.	// реализация конструктора и методов Физических лиц
+38.	 
+39.	Individual::
+40.	    Individual(
+41.	        string firstname,
+42.	        string surname,
+43.	        string patronymic,
+44.	        string dateOfBirth,
+45.	        string phoneNumber,
+46.	        string email,
+47.	        string comment
+48.	    ) {
+49.	        _firstname   = firstname;
+50.	        _surname     = surname;
+51.	        _patronymic  = patronymic;
+52.	        _dateOfBirth = dateOfBirth;
+53.	        _phoneNumber = phoneNumber;
+54.	        _email       = email;
+55.	        _comment     = comment;
+56.	    }
+57.	 
+58.	Individual::~Individual()
+59.	{
+60.	 
+61.	}
+62.	 
+63.	void Individual::input()
+64.	{
+65.	    cout << "Введите имя: ";
+66.	    cin >> _firstname;
+67.	 
+68.	    cout << "Введите фамилию: ";
+69.	    cin >> _surname;
+70.	 
+71.	    cout << "Введите отчество: ";
+72.	    cin >> _patronymic;
+73.	 
+74.	    cout << "Введите дату рождения: ";
+75.	    cin >> _dateOfBirth;
+76.	 
+77.	    cout << "Введите телефон: ";
+78.	    cin >> _phoneNumber;
+79.	 
+80.	    cout << "Введите email (опционально, для пропуска введите '-'): ";
+81.	    cin >> _email;
+82.	 
+83.	    cout << "Введите комментарий (опционально, для пропуска введите '-'): ";
+84.	    cin >> _comment;
+85.	 
+86.	    cout << endl;
+87.	    cout << "Запись добавлена!" << endl;
+88.	}
+89.	 
+90.	void Individual::getName()
+91.	{
+92.	    cout << _surname << " " << _firstname << " " << _patronymic << endl;
+93.	}
+94.	 
+95.	void Individual::output()
+96.	{
+97.	    cout << "           Имя: " << _firstname << endl;
+98.	    cout << "       Фамилия: " << _surname << endl;
+99.	    cout << "      Отчество: " << _patronymic << endl;
+100.	    cout << " Дата рождения: " << _dateOfBirth << endl;
+101.	 
+102.	    cout << "Номер телефона: " << _phoneNumber << endl;
+103.	    cout << "         Email: " << _email << endl;
+104.	 
+105.	    cout << "   Комментарий: " << _comment << endl;
+106.	}
+107.	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+108.	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+109.	 
+110.	// Класс Экстренные службы
+111.	class Emergency
+112.	{
+113.	public:
+114.	    string _phoneNumber;
+115.	    string _name;
+116.	    string _purpose;
+117.	 
+118.	    void input();
+119.	    void output();
+120.	    void getName();
+121.	//    string get_purpose(string _purpose);
+122.	 
+123.	    Emergency(
+124.	            string phoneNumber = "89674883654",
+125.	            string name        = "prikol",
+126.	            string purpose     = "primer"
+127.	    );
+128.	    ~Emergency();
+129.	};
+130.	 
+131.	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+132.	// реализация конструктора и методов Экстренных служб
+133.	 
+134.	Emergency::
+135.	    Emergency(
+136.	        string phoneNumber,
+137.	        string name,
+138.	        string purpose
+139.	    ) {
+140.	        _phoneNumber = phoneNumber;
+141.	        _name        = name;
+142.	        _purpose     = purpose;
+143.	    }
+144.	 
+145.	//string get_purpose(string _purpose)
+146.	//{
+147.	//    return _purpose;
+148.	//}
+149.	 
+150.	void Emergency::input()
+151.	{
+152.	    cout << "Введите название экстренной службы: ";
+153.	    cin >> _name;
+154.	    cout << "Введите номер телефона: ";
+155.	    cin >> _phoneNumber;
+156.	    cout << "Введите назначение службы: ";
+157.	    cin >> _purpose;
+158.	 
+159.	    cout << endl;
+160.	    cout << "Запись добавлена!" << endl;
+161.	}
+162.	 
+163.	void Emergency::output()
+164.	{
+165.	    cout << "Название экстренной службы: " << _name << endl;
+166.	    cout << "            Номер телефона: " << _phoneNumber << endl;
+167.	    cout << "                Назначение: " << _purpose << endl;
+168.	}
+169.	 
+170.	Emergency::~Emergency()
+171.	{
+172.	 
+173.	}
+174.	 
+175.	void Emergency::getName()
+176.	{
+177.	    cout << _name << endl;
+178.	}
+179.	 
+180.	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+181.	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+182.	 
+183.	// Класс Юридические лица
+184.	class Entity
+185.	{
+186.	public:
+187.	    string _name;
+188.	    string _number;
+189.	    string _email;
+190.	    string _schedule; // время работы
+191.	    string _comment;
+192.	 
+193.	    void input();
+194.	    void output();
+195.	    void getName();
+196.	 
+197.	    Entity(
+198.	            string name     = "Trol",
+199.	            string number   = "89164588554",
+200.	            string email    = "laky@mail.ru",
+201.	            string schedule = "8:00 - 18:00",
+202.	            string comment  = "***"
+203.	    );
+204.	    ~Entity();
+205.	};
+206.	 
+207.	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+208.	// реализация конструктора и методов Юридических лиц
+209.	 
+210.	Entity::
+211.	    Entity(
+212.	        string name,
+213.	        string number,
+214.	        string email,
+215.	        string schedule,
+216.	        string comment
+217.	    ) {
+218.	        _name     = name;
+219.	        _number   = number;
+220.	        _email    = email;
+221.	        _schedule = schedule;
+222.	        _comment  = comment;
+223.	    }
+224.	 
+225.	Entity::~Entity()
+226.	{
+227.	 
+228.	}
+229.	 
+230.	void  Entity::input()
+231.	{
+232.	    cout << "Введите название: ";
+233.	    cin >> _name;
+234.	    cout << "Введите номер телефона: ";
+235.	    cin >> _number;
+236.	    cout << "Введите почту (опционально, для пропуска введите '-'): ";
+237.	    cin >> _email;
+238.	    cout << "Введите график работы: ";
+239.	    cin >> _schedule;
+240.	    cout << "Введите примечание: ";
+241.	    cin >> _comment;
+242.	}
+243.	//-----------------------------------------------
+244.	void  Entity::output()
+245.	{
+246.	    cout << "      Название: " << _name << endl;
+247.	    cout << "Номер телефона: " << _number << endl;
+248.	    cout << "         Email: " << _email << endl;
+249.	    cout << " График работы: " << _schedule << endl;
+250.	    cout << "    Примечание: " << _comment << endl;
+251.	}
+252.	 
+253.	void Entity::getName()
+254.	{
+255.	    cout << _name << endl;
+256.	}
+257.	 
+258.	 
+259.	int main()
+260.	{
+261.	    setlocale (LC_ALL,"RUS");
+262.	    SetConsoleCP(1251);
+263.	    SetConsoleOutputCP(1251);
+264.	 
+265.	    //Обявление векторов для каждого класса
+266.	    vector<Individual> Individual_list{Individual("Сергей","Плотников", "Олегович", "01.01.2001", "+7(923)456-78-90", "example@email.com", "комментарий")};
+267.	    Individual_list.emplace_back("Арина","Педа", "Сергеевна", "19.05.2001", "+7(923)456-78-90", "example@email.com", "комментарий");
+268.	    Individual_list.emplace_back("Анжелика","Басова", "Валерьевна", "01.09.2001", "+7(923)456-78-90", "example@email.com", "комментарий");
+269.	    Individual_list.emplace_back("Алексей","Торбин", "Какойтович", "26.11.2001", "+7(923)456-78-90", "example@email.com", "комментарий");
+270.	 
+271.	    vector<Entity> Entity_list{Entity("ФГБОУ ВО ГУУ",  "8(495)377-89-14", "info@guu.ru", "09:00 - 18:00", "Лучший вуз страны")};
+272.	    Entity_list.emplace_back("Самсунг",  "8(555)555-35-35", "info@samsung.com", "02:00 - 18:00", "примечение");
+273.	    Entity_list.emplace_back("ИИС",  "8(495)377-89-14", "iis@guu.ru", "03:00 - 18:00", "Это Выхино, это ЮВАО, это наш ГУУ, любим мы его");
+274.	 
+275.	    vector<Emergency> Emergency_list{Emergency("+7(923)456-78-90", "Коменда", "Угнетать")};
+276.	    Emergency_list.emplace_back("+7(923)456-78-90", "Охранник", "Ох рано встает охрана");
+277.	    Emergency_list.emplace_back("+7(923)456-78-90", "МедКабинет", "Чипирует");
+278.	 
+279.	 
+280.	    do {
+281.	        cout << "1)   Физические лица - введите 'f'" << endl;
+282.	        cout << "2)  Юридические лица - введите 'y'" << endl;
+283.	        cout << "3) Экстренные службы - введите 'e'" << endl;
+284.	        cout << "введите 'q' для выхода" << endl;
+285.	        cout << "Введите букву: ";
+286.	        char case_input;
+287.	        cin >> case_input;
+288.	        system("cls");
+289.	        switch ( case_input ) {
+290.	            case 'f': {
+291.	                do {
+292.	                    cout << "  Просмотр записей - введите 'w'" << endl;
+293.	                    cout << "    Поиск контакта - введите 's'" << endl;
+294.	                    cout << " Добавление записи - введите 'a'" << endl;
+295.	                    cout << "Вернуться к списку - введите 'l'" << endl;
+296.	                    cin >> case_input;
+297.	                    system("cls");
+298.	                    switch (case_input) {
+299.	                        case 'w': {
+300.	                            for (int i = 0; i < Individual_list.size(); i++) {
+301.	                                cout << i + 1 << ") ";
+302.	                                Individual_list[i].getName();
+303.	                            }
+304.	                            cout << endl;
+305.	                            cout << "Введите номер записи, которую хотите просмотреть" << endl;
+306.	                            int record;
+307.	                            cin >> record;
+308.	                            system("cls");
+309.	                            Individual_list[record - 1].output();
+310.	                            cout << endl;
+311.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+312.	                            cin >> case_input;
+313.	                            system("cls");
+314.	                            if (case_input == 'b')
+315.	                                break;
+316.	                        }
+317.	                        case 's': {
+318.	                            string search_firstname;
+319.	                            string search_secondname;
+320.	                            string search_patronymic;
+321.	                            cout << "введите имя: ";
+322.	                            cin >> search_firstname;
+323.	                            cout << "введите фамилию: ";
+324.	                            cin >> search_secondname;
+325.	                            cout << "введите отчество: ";
+326.	                            cin >> search_patronymic;
+327.	 
+328.	                            int count = 0;
+329.	                            for (int i = 0; i < Individual_list.size(); i++) {
+330.	                                if (search_firstname == Individual_list[i]._firstname &&
+331.	                                    search_secondname == Individual_list[i]._surname &&
+332.	                                    search_patronymic == Individual_list[i]._patronymic) {
+333.	                                    cout << "Номер записи: " << i + 1 << endl;
+334.	                                    Individual_list[i].output();
+335.	                                } else {
+336.	                                    count++;
+337.	                                }
+338.	                            }
+339.	                            if (count == Individual_list.size()) {
+340.	                                cout << "Нет совпадений";
+341.	                            }
+342.	                            cout << endl;
+343.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+344.	                            cin >> case_input;
+345.	                            system("cls");
+346.	                            if (case_input == 'b')
+347.	                                break;
+348.	                        }
+349.	                        case 'a': {
+350.	                            Individual input;
+351.	                            input.input();
+352.	                            Individual_list.emplace_back(input);
+353.	                            cout << endl;
+354.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+355.	                            cin >> case_input;
+356.	                            system("cls");
+357.	                            if (case_input == 'b')
+358.	                                break;
+359.	                        }
+360.	                        case 'l': {
+361.	                            break;
+362.	                        }
+363.	                        default:
+364.	                            cout << "Неверное значение ввода" << endl;
+365.	                            break;
+366.	                    }
+367.	                    if (case_input == 'l') {
+368.	                        system("cls");
+369.	                        break;
+370.	                    }
+371.	                } while (true);
+372.	                break;
+373.	            }
+374.	            case 'y': {
+375.	                do {
+376.	                    cout << "  Просмотр записей - введите 'w'" << endl;
+377.	                    cout << "    Поиск контакта - введите 's'" << endl;
+378.	                    cout << " Добавление записи - введите 'a'" << endl;
+379.	                    cout << "Вернуться к списку - введите 'l'" << endl;
+380.	                    cin >>  case_input;
+381.	                    system("cls");
+382.	                    switch (case_input) {
+383.	                        case 'w': {
+384.	                            for (int i = 0; i < Entity_list.size(); i++) {
+385.	                                cout << i + 1 << ") ";
+386.	                                Entity_list[i].getName();
+387.	                            }
+388.	                            cout << endl;
+389.	                            cout << "Введите номер записи, которую хотите просмотреть" << endl;
+390.	                            int record;
+391.	                            cin >> record;
+392.	                            system("cls");
+393.	                            Entity_list[record - 1].output();
+394.	                            cout << endl;
+395.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+396.	                            cin >> case_input;
+397.	                            system("cls");
+398.	                            if (case_input == 'b')
+399.	                                break;
+400.	                        }
+401.	                        case 's': {
+402.	                            string search_name;
+403.	                            cout << "введите имя: ";
+404.	                            cin >> search_name;
+405.	 
+406.	                            int count = 0;
+407.	                            for (int i = 0; i < Entity_list.size(); i++) {
+408.	                                if (search_name == Entity_list[i]._name) {
+409.	                                    cout << "Номер записи: " << i + 1 << endl;
+410.	                                    Entity_list[i].output();
+411.	                                } else {
+412.	                                    count++;
+413.	                                }
+414.	                            }
+415.	                            if (count == Entity_list.size()) {
+416.	                                cout << "Нет совпадений";
+417.	                            }
+418.	                            cout << endl;
+419.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+420.	                            cin >> case_input;
+421.	                            system("cls");
+422.	                            if (case_input == 'b')
+423.	                                break;
+424.	                        }
+425.	                        case 'a':{
+426.	                            Entity input;
+427.	                            input.input();
+428.	                            Entity_list.emplace_back(input);
+429.	                            cout << endl;
+430.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+431.	                            cin >> case_input;
+432.	                            system("cls");
+433.	                            if (case_input == 'b')
+434.	                                break;
+435.	                        }
+436.	                        case 'l': {
+437.	                            break;
+438.	                        }
+439.	                        default:
+440.	                            cout << "Неверное значение ввода" << endl;
+441.	                            break;
+442.	                    }
+443.	                    if (case_input == 'l') {
+444.	                        system("cls");
+445.	                        break;
+446.	                    }
+447.	                } while (true);
+448.	                break;
+449.	            }
+450.	            case 'e': {
+451.	                do {
+452.	                    cout << "  Просмотр записей - введите 'w'" << endl;
+453.	                    cout << "    Поиск контакта - введите 's'" << endl;
+454.	                    cout << " Добавление записи - введите 'a'" << endl;
+455.	                    cout << "Вернуться к списку - введите 'l'" << endl;
+456.	                    cin >>  case_input;
+457.	                    system("cls");
+458.	                    switch (case_input) {
+459.	                        case 'w': {
+460.	                            for (int i = 0; i < Emergency_list.size(); i++) {
+461.	                                cout << i + 1 << ") ";
+462.	                                Emergency_list[i].getName();
+463.	                            }
+464.	                            cout << endl;
+465.	                            cout << "Введите номер записи, которую хотите просмотреть" << endl;
+466.	                            int record;
+467.	                            cin >> record;
+468.	                            system("cls");
+469.	                            Emergency_list[record - 1].output();
+470.	                            cout << endl;
+471.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+472.	                            cin >> case_input;
+473.	                            system("cls");
+474.	                            if (case_input == 'b')
+475.	                                break;
+476.	                        }
+477.	                        case 's': {
+478.	                            string search_purpose;
+479.	                            cout << "Введите назначение службы: ";
+480.	                            cin >> search_purpose;
+481.	 
+482.	                            int count = 0;
+483.	                            for (int i = 0; i < Emergency_list.size(); i++) {
+484.	                                if (search_purpose == Emergency_list[i]._purpose) {
+485.	                                    cout << "Номер записи: " << i + 1 << endl;
+486.	                                    Emergency_list[i].output();
+487.	                                } else {
+488.	                                    count++;
+489.	                                }
+490.	                            }
+491.	                            if (count == Emergency_list.size()) {
+492.	                                cout << "Нет совпадений";
+493.	                            }
+494.	                            cout << endl;
+495.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+496.	                            cin >> case_input;
+497.	                            system("cls");
+498.	                            if (case_input == 'b')
+499.	                                break;
+500.	                        }
+501.	                        case 'a':{
+502.	                            Emergency input;
+503.	                            input.input();
+504.	                            Emergency_list.emplace_back(input);
+505.	                            cout << endl;
+506.	                            cout << "Введите 'b', чтобы вернуться назад" << endl;
+507.	                            cin >> case_input;
+508.	                            system("cls");
+509.	                            if (case_input == 'b')
+510.	                                break;
+511.	                        }
+512.	                        case 'l': {
+513.	                            break;
+514.	                        }
+515.	                        default:
+516.	                            cout << "Неверное значение ввода" << endl;
+517.	                            break;
+518.	                    }
+519.	                    if (case_input == 'l') {
+520.	                        system("cls");
+521.	                        break;
+522.	                    }
+523.	                } while (true);
+524.	                break;
+525.	            }
+526.	            case 'q': {
+527.	                cout << "До встречи!" << endl;
+528.	                exit(0);
+529.	            }
+530.	            default:
+531.	                cout << "Неверное значение ввода" << endl;
+532.	                break;
+533.	        }
+534.	    } while (true);
+535.	}
